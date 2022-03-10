@@ -1,50 +1,52 @@
-import { useCallback, useState } from "react";
-// import Button from "./Button";
+import { useCallback, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { userSettingType } from "../types";
+import Button from "./Button";
 import styles from "./Search.module.scss";
 
 export default function Search() {
   const [text, setText] = useState("");
+  const [queryUrl, setQueryUrl] = useState("");
+  const engine = useSelector((state: userSettingType) => state.engine);
 
-  const setCookie = useCallback(
-    (name: string, text: string, exp: number): void => {
-      const date = new Date();
-      date.setTime(new Date().getTime() + exp * 24 * 60 * 60 * 1000);
-      document.cookie =
-        name + "=" + text + ";expires=" + date.toUTCString() + ";path=/;Secure";
-    },
-    []
-  );
+  useEffect(() => {
+    switch (engine) {
+      case "google":
+        setQueryUrl("https://www.google.com/search?q=");
+        break;
+      case "naver":
+        setQueryUrl("https://search.naver.com/search.naver?query=");
+        break;
+      case "daum":
+        setQueryUrl("https://search.daum.net/search?q=");
+        break;
+      default:
+        break;
+    }
+  }, [engine]);
 
-  const getCookie = useCallback((text) => {
-    const value = document.cookie.match("(^|;) ?" + text + "=([^;]*)(;|$)");
-    return value ? value[2] : null;
+  const onChange = useCallback((e) => {
+    setText(e.target.value);
   }, []);
 
-  const onChange = useCallback(
+  const onClick = useCallback(
     (e) => {
-      setText(e.target.value);
-      setCookie("keyword", e.target.value, 1);
+      e.preventDefault();
+      window.location.href = queryUrl + text;
     },
-    [setCookie]
+    [queryUrl, text]
   );
-
-  // const onClick = useCallback(
-  //   (e) => {
-  //     setCookie("keyword", text, 1);
-  //   },
-  //   [text, setCookie]
-  // );
 
   return (
     <div className={styles.container}>
-      <div>
+      <form>
         <input
           type="text"
           className={styles["input--text"]}
           value={text}
           onChange={onChange}
         />
-        {/* <Button
+        <Button
           text="Search"
           onClick={onClick}
           styleOption={{
@@ -56,11 +58,8 @@ export default function Search() {
             borderRadius: "0 5px 5px 0",
             width: "65px",
           }}
-        /> */}
-        <a href={`https://www.google.com/search?q=${getCookie("keyword")}`}>
-          Search
-        </a>
-      </div>
+        />
+      </form>
     </div>
   );
 }

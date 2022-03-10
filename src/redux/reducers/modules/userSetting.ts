@@ -37,11 +37,19 @@ export function setIsSetAction(isSet: boolean): setIsSetActionType {
   return { type: SET_IS_SET, isSet };
 }
 
+// const initialState = {
+//   name: "",
+//   engine: "",
+//   theme: "jawsbar",
+//   isSet: false,
+// };
+
 const initialState = {
-  name: "RAREBEEF",
-  engine: "google",
+  name: "",
+  engine: "",
   theme: "jawsbar",
-  isSet: true,
+  isSet: false,
+  ...JSON.parse(localStorage.getItem("userSetting")!),
 };
 
 export default function reducer(state = initialState, action: any) {

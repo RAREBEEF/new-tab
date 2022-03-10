@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserNameAction } from "../redux/reducers/modules/userSetting";
@@ -39,7 +40,10 @@ const SettingName: React.FC<SettingNameProps> = ({ setPage }) => {
       <h2 className={styles["query__title"]}>사용하실 이름을 알려주세요.</h2>
       <form>
         <input
-          className={styles["input--text"]}
+          className={classNames(
+            styles["input--text"],
+            userSetting.theme === "white" && styles.white
+          )}
           type="text"
           minLength={2}
           maxLength={12}
@@ -52,7 +56,12 @@ const SettingName: React.FC<SettingNameProps> = ({ setPage }) => {
           onClick={onNextClick}
           styleOption={{
             cursor: userSetting.name.length >= 2 ? "pointer" : "default",
-            backgroundColor: userSetting.name.length >= 2 ? userSetting.theme === "white" ? "black" : "white" : "#bebebe",
+            backgroundColor:
+              userSetting.name.length >= 2
+                ? userSetting.theme === "white"
+                  ? "black"
+                  : "white"
+                : "#bebebe",
           }}
         />
       </form>

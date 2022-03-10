@@ -39,7 +39,10 @@ const SettingTheme: React.FC<SettingThemeProps> = ({ setPage }) => {
     (e) => {
       e.preventDefault();
       setIsSet(true);
-      console.log(userSetting);
+      localStorage.setItem(
+        "userSetting",
+        JSON.stringify({ ...userSetting, isSet: true })
+      );
     },
     [setIsSet, userSetting]
   );

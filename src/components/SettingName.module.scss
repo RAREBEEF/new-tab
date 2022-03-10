@@ -42,8 +42,11 @@
       width: 80%;
       height: 30px;
       border-radius: 5px;
-      border-color: black;
+      border: none;
       outline: none;
+      &.white {
+        border: 1px solid black !important;
+      }
     }
   }
 }
