@@ -1,9 +1,29 @@
+@mixin fadein($duration: 2s, $delay: 0s) {
+  animation: fadein $duration $delay forwards;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
 .container {
-  // transform: translateY(-10vh);
+  @include fadein;
+  opacity: 0;
   margin: {
     bottom: 5vh;
   }
+  // border: 1px solid red;
   .header {
+    padding: {
+      left: 10px;
+      right: 10px;
+      // top: 30px;
+    }
+    line-height: 50px;
     font-family: "Nanum Gothic", sans-serif;
     font-size: 40px;
     font-weight: 700;

@@ -1,7 +1,18 @@
-.container {
-  // border: 1px solid red;
-  // transform: translateY(-10vh);
+@mixin fadein($duration: 2s, $delay: 0s) {
+  animation: fadein $duration $delay forwards;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
 
+.container {
+  @include fadein(2s, 0.4s);
+  opacity: 0;
   position: relative;
   .input--text {
     background-color: rgba(255, 255, 255, 0.3);
@@ -13,11 +24,25 @@
       left: 10px;
     }
     margin: {
-      bottom: 30vh;
+      bottom: 20vh;
     }
     outline: none;
     border: none;
     border-radius: 5px 0 0 5px;
     width: 35vw;
+    min-width: 200px;
+    height: 35px;
+  }
+  &.white {
+    .input--text {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: black;
+    }
+  }
+  &.black {
+    .input--text {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+    }
   }
 }

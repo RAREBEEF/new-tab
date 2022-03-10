@@ -1,49 +1,57 @@
+@mixin fadein($duration: 2s, $delay: 0s) {
+  animation: fadein $duration $delay forwards;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+
 .container {
-  position: relative;
-  // bottom: 8vh;
-  background-color: rgba(245, 245, 245, 0.3);
-  display: flex;
-  // flex-wrap: wrap;
-  width: 100%;
-  min-width: 200px;
-  // justify-content: center;
-  text-align: center;
-  // align-items: center;
+  @include fadein(2s, 0.6s);
+  opacity: 0;
   padding: {
     left: 10px;
     right: 10px;
     top: 15px;
     bottom: 15px;
   }
-  // margin: {
-  //   top: 20vh;
-  // }
-  // transform: translateY(10vh);
+  position: relative;
+  background-color: rgba(245, 245, 245, 0.3);
+  display: flex;
+  width: 100%;
+  min-width: 200px;
+  text-align: center;
   overflow-x: auto;
   overflow-y: visible;
+
   .bookmark {
     position: relative;
     margin: auto;
     cursor: pointer;
-    // background-color: whitesmoke;
     color: white;
     width: 100px;
     flex-shrink: 0;
     height: 100px;
     border: 2px solid white;
     border-radius: 5px;
-
+    &:hover {
+      color: rgb(192, 192, 192);
+      border-color: rgb(192, 192, 192);
+    }
     .delete {
       opacity: 0;
     }
 
     a {
       color: inherit;
-
       .icon {
         font-size: 80px;
       }
-
       .title {
         margin: {
           top: -5px;
@@ -69,6 +77,24 @@
           top: -5px;
         }
       }
+    }
+  }
+  &.white {
+    background-color: rgba(0, 0, 0, 0.3);
+    .bookmark {
+      color: black;
+      border-color: black;
+      &:hover {
+        color: rgb(80, 80, 80);
+        border-color: rgb(80, 80, 80);
+      }
+    }
+  }
+  &.black {
+    background-color: rgba(255, 255, 255, 0.8);
+    .bookmark {
+      color: black;
+      border-color: black;
     }
   }
 }

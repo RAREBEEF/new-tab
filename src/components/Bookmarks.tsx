@@ -8,7 +8,7 @@ import Button from "./Button";
 
 const Bookmarks: React.FC<bookmarksProps> = ({ setBookmarkModalActive }) => {
   const dispatch = useDispatch();
-  const bookmarks = useSelector((state: userSettingType) => state.bookmarks);
+  const userSetting = useSelector((state: userSettingType) => state);
 
   const onAddClick = useCallback(() => {
     setBookmarkModalActive(true);
@@ -22,9 +22,15 @@ const Bookmarks: React.FC<bookmarksProps> = ({ setBookmarkModalActive }) => {
   );
 
   return (
-    <ul className={styles.container}>
-      {/* <a className={classNames(styles["bookmark"])}></a> */}
-      {bookmarks.map((bookmark: any, i) => {
+    <ul
+      className={classNames(
+        styles.container,
+        (userSetting.theme === "white" || userSetting.theme === "pastel") &&
+          styles.white,
+        userSetting.theme === "black" && styles.black
+      )}
+    >
+      {userSetting.bookmarks.map((bookmark: any, i) => {
         console.log(bookmark);
         return (
           <li key={bookmark.id} className={classNames(styles["bookmark"])}>
@@ -43,6 +49,9 @@ const Bookmarks: React.FC<bookmarksProps> = ({ setBookmarkModalActive }) => {
                   position: "absolute",
                   top: "-10px",
                   right: "-10px",
+                  backgroundColor:
+                    userSetting.theme === "black" ? "black" : "auto",
+                  color: userSetting.theme === "black" ? "white" : "auto",
                 }}
               />
             </div>

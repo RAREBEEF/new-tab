@@ -7,13 +7,11 @@
   background-color: rgba(255, 255, 255, 0.4);
   border: 2px solid whitesmoke;
   border-radius: 5px;
-  width: 40vw;
+  width: 80vw;
   max-width: 400px;
-  // height: 100px;
   text-align: center;
   box-shadow: 1px 1px 8px black;
   h2 {
-    background-color: rgb(128, 128, 128);
     color: white;
     text-align: start;
     border-radius: 5px 5px 0 0;
@@ -42,6 +40,14 @@
       margin: {
         bottom: 10px;
       }
+    }
+  }
+  &.white {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: black;
+    box-shadow: 1px 1px 8px gray;
+    h2 {
+      color: black;
     }
   }
 }

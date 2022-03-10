@@ -25,10 +25,10 @@ function App() {
         );
         break;
       case "black":
-        setBg("linear-gradient(black, black)");
+        setBg("black");
         break;
       case "white":
-        setBg("linear-gradient(white, white)");
+        setBg("whitesmoke");
         break;
       default:
         break;
@@ -57,10 +57,11 @@ function App() {
 
 export default App;
 
-// TODO: 로컬 스토리지에서 유저 세팅 여부 확인
-// 유저 세팅 없을 경우 => 최초 접속이므로 초기 세팅
-// 유저 세팅 있을 경우 => 재접속이므로 세팅을 바탕으로 홈화면 렌더링
-// 초기 설정 & 홈 최대 높이/너비 분리하기(App에서 말고)
-// FIXME: 유저 세팅 state redux로 옮기기
-// 초기 세팅 말고 설정 페이지에서도 유저 세팅 수정하려면 전역 상태로 관리하는게 나을 듯
-// 유저 세팅이 누락되었는지 확인 절차 필요
+
+// FIXME: 
+// 시계 폰트 고정폭으로 변경
+// 전체적인 테마 다듬기
+// 테마 색상 더 쉽게 변경할 수 있는 방법 생각해보기
+// 설정창 구현하기
+// 검은테마 북마크 호버 추가
+// 모달 투명도 없애기 고려

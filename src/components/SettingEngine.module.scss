@@ -36,8 +36,14 @@
   }
   .logo-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     .search-engine-logo {
+      margin: {
+        bottom: 10px;
+        left: auto;
+        right: auto;
+      };
       @include fadein(2s, 0.3s);
       opacity: 0;
       cursor: pointer;

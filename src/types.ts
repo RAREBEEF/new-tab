@@ -62,3 +62,11 @@ export interface bookmarksProps {
 export interface bookmarkModalProps {
   setBookmarkModalActive: Function;
 }
+
+export interface HeaderModalProps {
+  time: any;
+}
+
+export interface ClockModalProps {
+  time: Array<string | number>;
+}

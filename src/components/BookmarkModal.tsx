@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { useCallback, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addBookmark } from "../redux/reducers/modules/userSetting";
-import { bookmarkModalProps } from "../types";
+import { bookmarkModalProps, userSettingType } from "../types";
 import styles from "./BookmarkModal.module.scss";
 import Button from "./Button";
 
@@ -10,6 +10,7 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
   setBookmarkModalActive,
 }) => {
   const dispatch = useDispatch();
+  const userSetting = useSelector((state: userSettingType) => state);
   const [bookmark, setBookmark] = useState({ title: "", url: "" });
 
   const onTitleChange = useCallback(
@@ -45,10 +46,25 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
   );
 
   return (
-    <div className={styles.container}>
+    <div
+      className={classNames(
+        styles.container,
+        (userSetting.theme === "white" || userSetting.theme === "pastel") &&
+          styles.white
+      )}
+    >
       <h2
         style={{
-          background: "linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad)",
+          background:
+            userSetting.theme === "white"
+              ? "white"
+              : userSetting.theme === "jawsbar"
+              ? "linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad)"
+              : userSetting.theme === "purple"
+              ? "linear-gradient(25deg,#2d00f7,#8900f2,#bc00dd,#b100e8,#db00b6,#f20089)"
+              : userSetting.theme === "pastel"
+              ? "linear-gradient(25deg,#ffadad,#ffd6a5,#fdffb6,#caffbf,#9bf6ff,#a0c4ff,#bdb2ff,#ffc6ff,#fffffc)"
+              : "black",
         }}
       >
         Add bookmark
@@ -63,6 +79,7 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
           placeholder="Site name"
           value={bookmark.title}
           onChange={onTitleChange}
+          maxLength={10}
         />
         <input
           className={classNames(styles["input--text"], styles["bookmark-url"])}

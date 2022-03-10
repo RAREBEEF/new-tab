@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { userSettingType } from "../types";
@@ -7,10 +8,10 @@ import styles from "./Search.module.scss";
 export default function Search() {
   const [text, setText] = useState("");
   const [queryUrl, setQueryUrl] = useState("");
-  const engine = useSelector((state: userSettingType) => state.engine);
+  const userSetting = useSelector((state: userSettingType) => state);
 
   useEffect(() => {
-    switch (engine) {
+    switch (userSetting.engine) {
       case "google":
         setQueryUrl("https://www.google.com/search?q=");
         break;
@@ -23,7 +24,7 @@ export default function Search() {
       default:
         break;
     }
-  }, [engine]);
+  }, [userSetting.engine]);
 
   const onChange = useCallback((e) => {
     setText(e.target.value);
@@ -38,7 +39,14 @@ export default function Search() {
   );
 
   return (
-    <div className={styles.container}>
+    <div
+      className={classNames(
+        styles.container,
+        (userSetting.theme === "white" || userSetting.theme === "pastel") &&
+          styles.white,
+        userSetting.theme === "black" && styles.black
+      )}
+    >
       <form>
         <input
           type="text"
@@ -50,16 +58,27 @@ export default function Search() {
           text="Search"
           onClick={onClick}
           styleOption={{
-            // marginTop: "auto",
             display: "inline",
-            // position: "absolute",
-            // right: "0",
-            // top: "2px",
-            color: "white",
-            borderLeft: "1px solid white",
+            color:
+              userSetting.theme === "white" || userSetting.theme === "pastel"
+                ? "black"
+                : userSetting.theme === "black"
+                ? "black"
+                : "white",
+            borderLeft:
+              userSetting.theme === "white" || userSetting.theme === "pastel"
+                ? "1px solid black"
+                : userSetting.theme === "black"
+                ? "1px solid black"
+                : "1px solid white",
             borderRadius: "0 5px 5px 0",
-            backgroundColor: "rgba(255, 255, 255, .3)",
-            // width: "65px",
+            backgroundColor:
+              userSetting.theme === "white" || userSetting.theme === "pastel"
+                ? "rgba(0, 0, 0, .3)"
+                : userSetting.theme === "black"
+                ? "rgba(255, 255, 255, 0.8)"
+                : "rgba(255, 255, 255, .3)",
+            height: "35px",
           }}
         />
       </form>
