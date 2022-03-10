@@ -1,0 +1,47 @@
+.container {
+  font-family: "Nanum Gothic", sans-serif;
+  color: black;
+  cursor: default;
+  position: absolute;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  width: 40vw;
+  max-width: 400px;
+  // height: 100px;
+  text-align: center;
+  box-shadow: 1px 1px 8px black;
+  h2 {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    text-align: start;
+    border-radius: 5px 5px 0 0;
+    font-weight: 700;
+    padding: {
+      top: 5px;
+      left: 5px;
+      bottom: 5px;
+    }
+    margin: {
+      bottom: 20px;
+    }
+  }
+  .input--text {
+    display: block;
+    margin: auto;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 23px;
+    width: 90%;
+    padding: {
+      left: 5px;
+    }
+    &.bookmark-title {
+      margin: {
+        bottom: 10px;
+      }
+    }
+  }
+}

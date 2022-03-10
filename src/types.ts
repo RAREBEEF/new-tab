@@ -17,10 +17,23 @@ export interface setIsSetActionType {
   isSet: boolean;
 }
 
+export interface addBookmarkActionType {
+  type: string;
+  title: string;
+  url: string;
+  id: number;
+}
+
+export interface deleteBookmarkActionType {
+  type: string;
+  id: number;
+}
+
 export interface userSettingType {
   name: string;
   engine: string;
   theme: string;
+  bookmarks: Array<Object>;
   isSet: boolean;
 }
 
@@ -40,4 +53,12 @@ export interface SettingEngineProps {
 
 export interface SettingThemeProps {
   setPage: Function;
+}
+
+export interface bookmarksProps {
+  setBookmarkModalActive: Function;
+}
+
+export interface bookmarkModalProps {
+  setBookmarkModalActive: Function;
 }

@@ -1,4 +1,6 @@
 import {
+  addBookmarkActionType,
+  deleteBookmarkActionType,
   setIsSetActionType,
   setSerachEngineActionType,
   setThemeActionType,
@@ -8,6 +10,8 @@ import {
 export const SET_USER_NAME = "SET_USER_NAME";
 export const SET_SEARCH_ENGINE = "SET_SEARCH_ENGINE";
 export const SET_THEME = "SET_THEME";
+export const ADD_BOOKMARK = "SET_BOOKMARK";
+export const DELETE_BOOKMARK = "DELETE_BOOKMARK";
 export const SET_IS_SET = "IS_SET";
 
 export function setUserNameAction(name: string): setUserNameActionType {
@@ -33,22 +37,31 @@ export function setThemeAction(theme: string): setThemeActionType {
   };
 }
 
+export function addBookmark(bookmark: any): addBookmarkActionType {
+  return {
+    type: ADD_BOOKMARK,
+    id: Date.now(),
+    ...bookmark,
+  };
+}
+
+export function deleteBookmark(id: number): deleteBookmarkActionType {
+  return {
+    type: DELETE_BOOKMARK,
+    id,
+  };
+}
+
 export function setIsSetAction(isSet: boolean): setIsSetActionType {
   return { type: SET_IS_SET, isSet };
 }
-
-// const initialState = {
-//   name: "",
-//   engine: "",
-//   theme: "jawsbar",
-//   isSet: false,
-// };
 
 const initialState = {
   name: "",
   engine: "",
   theme: "jawsbar",
   isSet: false,
+  bookmarks: [],
   ...JSON.parse(localStorage.getItem("userSetting")!),
 };
 
@@ -60,6 +73,21 @@ export default function reducer(state = initialState, action: any) {
       return { ...state, engine: action.engine };
     case SET_THEME:
       return { ...state, theme: action.theme };
+    case ADD_BOOKMARK:
+      return {
+        ...state,
+        bookmarks: [
+          ...state.bookmarks,
+          { title: action.title, url: action.url, id: action.id },
+        ],
+      };
+    case DELETE_BOOKMARK:
+      return {
+        ...state,
+        bookmarks: [...state.bookmarks].filter(
+          (bookmark) => action.id !== bookmark.id
+        ),
+      };
     case SET_IS_SET:
       return { ...state, isSet: action.isSet };
     default:

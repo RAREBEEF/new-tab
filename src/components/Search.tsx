@@ -50,13 +50,16 @@ export default function Search() {
           text="Search"
           onClick={onClick}
           styleOption={{
-            marginTop: "auto",
+            // marginTop: "auto",
             display: "inline",
-            position: "absolute",
-            right: "0",
-            borderLeft: "1px solid black",
+            // position: "absolute",
+            // right: "0",
+            // top: "2px",
+            color: "white",
+            borderLeft: "1px solid white",
             borderRadius: "0 5px 5px 0",
-            width: "65px",
+            backgroundColor: "rgba(255, 255, 255, .3)",
+            // width: "65px",
           }}
         />
       </form>

@@ -1,7 +1,11 @@
 .container {
   // border: 1px solid red;
+  // transform: translateY(-10vh);
+
   position: relative;
   .input--text {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
     padding: {
       top: 5px;
       right: 70px;
@@ -9,12 +13,11 @@
       left: 10px;
     }
     margin: {
-      // right: 10px;
+      bottom: 30vh;
     }
     outline: none;
-    border: 1px solid black;
     border: none;
-    border-radius: 5px;
-    width: 50vw;
+    border-radius: 5px 0 0 5px;
+    width: 35vw;
   }
 }

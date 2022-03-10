@@ -1,9 +1,10 @@
 .container {
+  // transform: translateY(-10vh);
   margin: {
     bottom: 5vh;
   }
-  border: 1px solid red;
   .header {
+    font-family: "Nanum Gothic", sans-serif;
     font-size: 40px;
     font-weight: 700;
     text-align: center;
