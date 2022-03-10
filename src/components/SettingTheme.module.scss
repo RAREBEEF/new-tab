@@ -1,0 +1,99 @@
+@mixin fadein($duration: 2s, $delay: 0s) {
+  animation: fadein $duration $delay forwards;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.query {
+  padding: {
+    top: 5vh;
+    left: 10vw;
+    right: 10vw;
+  }
+  @include fadein(2s, 0.2s);
+  opacity: 0;
+  flex-grow: 1;
+
+  .query__title {
+    padding: {
+      top: 10vmin;
+      bottom: 8vh;
+    }
+    @include fadein(2s, 0.5s);
+    opacity: 0;
+    margin: auto;
+    font-size: 30px;
+  }
+
+  form {
+    text-align: center;
+  }
+  .theme-wrapper {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-wrap: wrap;
+    .theme {
+      margin: {
+        bottom: 10px;
+      }
+      @include fadein(2s, 0.3s);
+      opacity: 0;
+      cursor: pointer;
+      width: 70px;
+      height: 70px;
+      border-radius: 5px;
+      border: 1px solid white;
+      &:not(last-child) {
+        margin-right: 10px;
+      }
+      &.theme--jawsbar {
+        background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);
+      }
+      &.theme--purple {
+        background: linear-gradient(
+          25deg,
+          #2d00f7,
+          #8900f2,
+          #bc00dd,
+          #b100e8,
+          #db00b6,
+          #f20089
+        );
+      }
+      &.theme--pastel {
+        background: linear-gradient(
+          25deg,
+          #ffadad,
+          #ffd6a5,
+          #fdffb6,
+          #caffbf,
+          #9bf6ff,
+          #a0c4ff,
+          #bdb2ff,
+          #ffc6ff,
+          #fffffc
+        );
+      }
+      &.theme--black {
+        background-color: black;
+      }
+      &.theme--white {
+        background-color: white;
+        &.selected {
+          box-shadow: 0px 0px 10px black;
+        }
+      }
+
+      &.selected {
+        box-shadow: 0px 0px 10px white;
+      }
+    }
+  }
+}

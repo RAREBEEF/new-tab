@@ -1,0 +1,62 @@
+@mixin fadein($duration: 2s, $delay: 0s) {
+  animation: fadein $duration $delay forwards;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.query {
+  padding: {
+    top: 5vh;
+    left: 10vw;
+    right: 10vw;
+  }
+  @include fadein(2s, 0.2s);
+  opacity: 0;
+  flex-grow: 1;
+
+  .query__title {
+    padding: {
+      top: 10vmin;
+      bottom: 8vh;
+    }
+    @include fadein(2s, 0.5s);
+    opacity: 0;
+    margin: auto;
+    font-size: 30px;
+  }
+
+  form {
+    text-align: center;
+  }
+  .logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .search-engine-logo {
+      @include fadein(2s, 0.3s);
+      opacity: 0;
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+      filter: grayscale(1);
+      &.selected {
+        box-shadow: 0px 0px 10px white;
+        filter: grayscale(0);
+      }
+    }
+  }
+  .white {
+    .search-engine-logo {
+      &.selected {
+        box-shadow: 0px 0px 10px black;
+        filter: grayscale(0);
+      }
+    }
+  }
+}

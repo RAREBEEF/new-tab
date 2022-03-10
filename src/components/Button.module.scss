@@ -1,0 +1,22 @@
+.btn {
+  padding: {
+    top: 5px;
+    right: 10px;
+    bottom: 5px;
+    left: 10px;
+  }
+  margin: {
+    top: 8vh;
+    right: auto;
+    left: auto;
+  }
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  outline: none;
+  display: block;
+  &:hover {
+    background-color: rgb(231, 231, 231) !important;
+  }
+}

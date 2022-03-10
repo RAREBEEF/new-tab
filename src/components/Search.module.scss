@@ -1,0 +1,20 @@
+.container {
+  // border: 1px solid red;
+  position: relative;
+  .input--text {
+    padding: {
+      top: 5px;
+      right: 70px;
+      bottom: 5px;
+      left: 10px;
+    }
+    margin: {
+      // right: 10px;
+    }
+    outline: none;
+    border: 1px solid black;
+    border: none;
+    border-radius: 5px;
+    width: 50vw;
+  }
+}
