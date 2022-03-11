@@ -14,9 +14,8 @@
   @include fadein(2s, 0.4s);
   opacity: 0;
   position: relative;
+  transition: filter 0.5s;
   .input--text {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: white;
     padding: {
       top: 5px;
       right: 70px;
@@ -26,6 +25,8 @@
     margin: {
       bottom: 20vh;
     }
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
     outline: none;
     border: none;
     border-radius: 5px 0 0 5px;
@@ -33,12 +34,20 @@
     min-width: 200px;
     height: 35px;
   }
-  &.white {
+
+  &.blur {
+    filter: blur(3px);
+    pointer-events: none;
+  }
+
+  &.white,
+  &.pastel {
     .input--text {
       background-color: rgba(0, 0, 0, 0.3);
       color: black;
     }
   }
+
   &.black {
     .input--text {
       background-color: rgba(255, 255, 255, 0.8);

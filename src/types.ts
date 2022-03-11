@@ -41,6 +41,7 @@ export interface ButtonProps {
   text: string;
   onClick: (e: any) => void;
   styleOption?: object;
+  classes?: any;
 }
 
 // Prop type
@@ -57,16 +58,26 @@ export interface SettingThemeProps {
 
 export interface bookmarksProps {
   setBookmarkModalActive: Function;
+  isBlur: boolean;
 }
 
 export interface bookmarkModalProps {
   setBookmarkModalActive: Function;
 }
 
-export interface HeaderModalProps {
-  time: any;
+export interface SettingModalProps {
+  setSettingModalActive: Function;
+  settingModalActive: boolean;
 }
 
-export interface ClockModalProps {
-  time: Array<string | number>;
+export interface HeaderModalProps {
+  isBlur: boolean;
 }
+
+export interface SearchProps {
+  isBlur: boolean;
+}
+
+// export interface ClockModalProps {
+//   time: Array<string | number>;
+// }

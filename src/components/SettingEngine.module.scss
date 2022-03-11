@@ -33,35 +33,38 @@
 
   form {
     text-align: center;
-  }
-  .logo-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    .search-engine-logo {
-      margin: {
-        bottom: 10px;
-        left: auto;
-        right: auto;
-      };
-      @include fadein(2s, 0.3s);
-      opacity: 0;
-      cursor: pointer;
-      width: 100px;
-      height: 100px;
-      border-radius: 5px;
-      filter: grayscale(1);
-      &.selected {
-        box-shadow: 0px 0px 10px white;
-        filter: grayscale(0);
+    
+    .logo-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .search-engine-logo {
+        margin: {
+          bottom: 10px;
+          left: auto;
+          right: auto;
+        }
+        @include fadein(2s, 0.3s);
+        opacity: 0;
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        filter: grayscale(1);
+
+        &.selected {
+          box-shadow: 0px 0px 10px white;
+          filter: grayscale(0);
+        }
       }
     }
-  }
-  .white {
-    .search-engine-logo {
-      &.selected {
-        box-shadow: 0px 0px 10px black;
-        filter: grayscale(0);
+    .white {
+      .search-engine-logo {
+        &.selected {
+          box-shadow: 0px 0px 10px black;
+          filter: grayscale(0);
+        }
       }
     }
   }

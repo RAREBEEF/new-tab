@@ -1,12 +1,15 @@
 import classNames from "classnames";
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteBookmark } from "../redux/reducers/modules/userSetting";
 import { bookmarksProps, userSettingType } from "../types";
 import styles from "./Bookmarks.module.scss";
 import Button from "./Button";
 
-const Bookmarks: React.FC<bookmarksProps> = ({ setBookmarkModalActive }) => {
+const Bookmarks: React.FC<bookmarksProps> = ({
+  setBookmarkModalActive,
+  isBlur,
+}) => {
   const dispatch = useDispatch();
   const userSetting = useSelector((state: userSettingType) => state);
 
@@ -25,16 +28,15 @@ const Bookmarks: React.FC<bookmarksProps> = ({ setBookmarkModalActive }) => {
     <ul
       className={classNames(
         styles.container,
-        (userSetting.theme === "white" || userSetting.theme === "pastel") &&
-          styles.white,
-        userSetting.theme === "black" && styles.black
+        styles[userSetting.theme],
+        isBlur && styles.blur
       )}
     >
       {userSetting.bookmarks.map((bookmark: any, i) => {
         console.log(bookmark);
         return (
           <li key={bookmark.id} className={classNames(styles["bookmark"])}>
-            <a href={bookmark.url}>
+            <a href={bookmark.url} className={styles.anchor}>
               <div className={styles.icon}>
                 {bookmark.title[0].toUpperCase()}
               </div>
@@ -44,15 +46,7 @@ const Bookmarks: React.FC<bookmarksProps> = ({ setBookmarkModalActive }) => {
               <Button
                 text="X"
                 onClick={onDeleteClick}
-                styleOption={{
-                  margin: 0,
-                  position: "absolute",
-                  top: "-10px",
-                  right: "-10px",
-                  backgroundColor:
-                    userSetting.theme === "black" ? "black" : "auto",
-                  color: userSetting.theme === "black" ? "white" : "auto",
-                }}
+                classes={["Bookmarks__delete"]}
               />
             </div>
           </li>

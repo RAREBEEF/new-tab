@@ -1,18 +1,23 @@
 import { useSelector } from "react-redux";
 import { ButtonProps, userSettingType } from "../types";
 import styles from "./Button.module.scss";
+import classNames from "classnames";
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, styleOption }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  onClick,
+  styleOption,
+  classes,
+}) => {
   const theme = useSelector((state: userSettingType) => state.theme);
   return (
     <button
-      className={styles.btn}
+      className={classNames(
+        styles.btn,
+        styles[theme],
+        classes?.map((item: any) => styles[item])
+      )}
       onClick={onClick}
-      style={{
-        backgroundColor: theme === "white" ? "black" : "white",
-        color: theme === "white" ? "white" : "black",
-        ...styleOption,
-      }}
     >
       {text}
     </button>

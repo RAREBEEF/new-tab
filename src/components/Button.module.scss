@@ -10,14 +10,79 @@
     right: auto;
     left: auto;
   }
+
   cursor: pointer;
   border-radius: 5px;
   border: none;
   background-color: white;
   outline: none;
   display: block;
+
   &:hover {
-    // background-color: rgb(192, 192, 192) !important;
-    filter: invert(.3);
+    filter: invert(0.3);
+  }
+
+  &.Search {
+    display: inline;
+    border-left: 1px solid white;
+    border-radius: 0 5px 5px 0;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    height: 35px;
+    &.jawsbar {
+      color: white !important;
+    }
+  }
+
+  &.BookmarkModal__submit {
+    margin: 15px 15px 15px auto;
+    display: inline;
+  }
+
+  &.BookmarkModal__cancel {
+    margin: auto;
+    display: inline;
+  }
+
+  &.Bookmarks__delete {
+    margin: 0;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+
+  &.InitialSetting-all-pages__prev {
+    margin: {
+      left: 1vw;
+      right: 1vw;
+    }
+    height: 30px;
+    display: inline;
+  }
+
+  &.InitialSetting-all-pages__next {
+    margin: {
+      left: 1vw;
+      right: 1vw;
+    }
+    filter: invert(0);
+    height: 30px;
+    display: inline;
+    cursor: default;
+    background-color: #bebebe;
+
+    &.active {
+      cursor: pointer;
+      background-color: white;
+      &:hover {
+        filter: invert(0.3);
+      }
+    }
+  }
+  &.SettingModal {
+    display: inline;
+    margin: auto;
+    border: 1px solid black;
+    color: black;
+    margin-right: 20px;
   }
 }

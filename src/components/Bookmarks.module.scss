@@ -10,7 +10,6 @@
   }
 }
 
-
 .container {
   @include fadein(2s, 0.6s);
   opacity: 0;
@@ -28,8 +27,22 @@
   text-align: center;
   overflow-x: auto;
   overflow-y: visible;
-
+  transition: filter .5s;
   .bookmark {
+    @keyframes bookmarksFadein {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @for $i from 1 through 100 {
+      &:nth-child(#{$i}) {
+        animation: bookmarksFadein 2s #{$i * 0.3}s forwards;
+      }
+    }
+    opacity: 0;
     position: relative;
     margin: auto;
     cursor: pointer;
@@ -39,15 +52,30 @@
     height: 100px;
     border: 2px solid white;
     border-radius: 5px;
+
     &:hover {
-      color: rgb(192, 192, 192);
       border-color: rgb(192, 192, 192);
+      .icon,
+      .title {
+        color: rgb(192, 192, 192);
+      }
     }
+
     .delete {
       opacity: 0;
     }
 
-    a {
+    &:hover {
+      .delete {
+        opacity: 1;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    .anchor {
       color: inherit;
       .icon {
         font-size: 80px;
@@ -59,14 +87,6 @@
       }
     }
 
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-    &:hover {
-      .delete {
-        opacity: 1;
-      }
-    }
     &.add {
       .icon {
         font-size: 65px;
@@ -79,6 +99,7 @@
       }
     }
   }
+
   &.white {
     background-color: rgba(0, 0, 0, 0.3);
     .bookmark {
@@ -96,5 +117,10 @@
       color: black;
       border-color: black;
     }
+  }
+
+  &.blur {
+    filter: blur(3px);
+    pointer-events: none;
   }
 }

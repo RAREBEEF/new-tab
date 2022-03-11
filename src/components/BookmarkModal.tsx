@@ -11,7 +11,7 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
 }) => {
   const dispatch = useDispatch();
   const userSetting = useSelector((state: userSettingType) => state);
-  const [bookmark, setBookmark] = useState({ title: "", url: "" });
+  const [bookmark, setBookmark] = useState({ title: "", url: "https://" });
 
   const onTitleChange = useCallback(
     (e) => {
@@ -46,29 +46,8 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
   );
 
   return (
-    <div
-      className={classNames(
-        styles.container,
-        (userSetting.theme === "white" || userSetting.theme === "pastel") &&
-          styles.white
-      )}
-    >
-      <h2
-        style={{
-          background:
-            userSetting.theme === "white"
-              ? "white"
-              : userSetting.theme === "jawsbar"
-              ? "linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad)"
-              : userSetting.theme === "purple"
-              ? "linear-gradient(25deg,#2d00f7,#8900f2,#bc00dd,#b100e8,#db00b6,#f20089)"
-              : userSetting.theme === "pastel"
-              ? "linear-gradient(25deg,#ffadad,#ffd6a5,#fdffb6,#caffbf,#9bf6ff,#a0c4ff,#bdb2ff,#ffc6ff,#fffffc)"
-              : "black",
-        }}
-      >
-        Add bookmark
-      </h2>
+    <div className={classNames(styles.container, styles[userSetting.theme])}>
+      <h2>Add bookmark</h2>
       <form>
         <input
           className={classNames(
@@ -91,20 +70,12 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
         <Button
           onClick={onSubmitClick}
           text="Submit"
-          styleOption={{
-            margin: "15px 15px 15px auto",
-            // border: "1px solid black",
-            display: "inline",
-          }}
+          classes={["BookmarkModal__submit"]}
         />
         <Button
           onClick={onCancelClick}
           text="Cancel"
-          styleOption={{
-            margin: "auto",
-            // border: "1px solid black",
-            display: "inline",
-          }}
+          classes={["BookmarkModal__cancel"]}
         />
       </form>
     </div>

@@ -42,7 +42,7 @@ const SettingName: React.FC<SettingNameProps> = ({ setPage }) => {
         <input
           className={classNames(
             styles["input--text"],
-            userSetting.theme === "white" && styles.white
+            styles[userSetting.theme]
           )}
           type="text"
           minLength={2}
@@ -54,15 +54,19 @@ const SettingName: React.FC<SettingNameProps> = ({ setPage }) => {
         <Button
           text="다음"
           onClick={onNextClick}
-          styleOption={{
-            cursor: userSetting.name.length >= 2 ? "pointer" : "default",
-            backgroundColor:
-              userSetting.name.length >= 2
-                ? userSetting.theme === "white"
-                  ? "black"
-                  : "white"
-                : "#bebebe",
-          }}
+          classes={[
+            "InitialSetting-all-pages__next",
+            userSetting.name.length >= 2 && "active",
+          ]}
+          // styleOption={{
+          //   cursor: userSetting.name.length >= 2 ? "pointer" : "default",
+          //   backgroundColor:
+          //     userSetting.name.length >= 2
+          //       ? userSetting.theme === "white"
+          //         ? "black"
+          //         : "white"
+          //       : "#bebebe",
+          // }}
         />
       </form>
     </div>

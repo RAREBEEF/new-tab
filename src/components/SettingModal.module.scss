@@ -1,0 +1,147 @@
+.container {
+  z-index: -1;
+  width: 80vw;
+  max-width: 500px;
+  min-width: 200px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  border-radius: 5px 0 5px 5px;
+  overflow: hidden;
+  // .header {
+  //   padding: {
+  //     top: 10px;
+  //     bottom: 10px;
+  //   }
+  //   font-size: 20px;
+  //   background-color: rgba(255, 255, 255, 0.3);
+  //   h2 {
+  //     width: 130px;
+  //     text-align: center;
+  //   }
+  // }
+  .wrapper {
+    display: flex;
+  }
+  .nav {
+    background-color: darkgray;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    .nav__item {
+      width: 130px;
+      padding: {
+        top: 15px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+      }
+      cursor: pointer;
+      border-bottom: 1px solid white;
+      color: whitesmoke;
+      font-weight: 900;
+      text-align: center;
+      &:hover {
+        background-color: lightgray;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      &.active {
+        background-color: white;
+        // background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+      }
+      &:nth-child(3) {
+        border: none;
+      }
+    }
+  }
+  .body {
+    // height: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    // border-top: 3px solid gray;
+    padding: {
+      bottom: 10px;
+    }
+    .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .logo-wrapper {
+        width: 100%;
+        display: flex;
+        .search-engine-logo {
+          cursor: pointer;
+          margin: auto;
+          width: 50px;
+          height: 50px;
+          border: 1px solid gray;
+          &:nth-child(2) {
+            border: none;
+          }
+          border-radius: 5px;
+          &.selected {
+            box-shadow: 1px 1px 3px black;
+          }
+        }
+      }
+      .theme-wrapper {
+        width: 100%;
+        display: flex;
+        .theme {
+          cursor: pointer;
+          margin: auto;
+          width: 50px;
+          height: 50px;
+          border: 1px solid gray;
+          border-radius: 5px;
+          &.selected {
+            box-shadow: 1px 1px 3px black;
+          }
+          &.theme--jawsbar {
+            background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);
+          }
+          &.theme--purple {
+            background: linear-gradient(
+              25deg,
+              #2d00f7,
+              #8900f2,
+              #bc00dd,
+              #b100e8,
+              #db00b6,
+              #f20089
+            );
+          }
+          &.theme--pastel {
+            background: linear-gradient(
+              25deg,
+              #ffadad,
+              #ffd6a5,
+              #fdffb6,
+              #caffbf,
+              #9bf6ff,
+              #a0c4ff,
+              #bdb2ff,
+              #ffc6ff,
+              #fffffc
+            );
+          }
+          &.theme--black {
+            background: black;
+          }
+          &.theme--white {
+            background: white;
+          }
+        }
+      }
+    }
+    .btn-wrapper {
+      width: 100%;
+      text-align: end;
+    }
+  }
+}

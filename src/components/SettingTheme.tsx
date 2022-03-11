@@ -97,20 +97,12 @@ const SettingTheme: React.FC<SettingThemeProps> = ({ setPage }) => {
         <Button
           text="이전"
           onClick={onPrevClick}
-          styleOption={{
-            display: "inline",
-            marginLeft: "1vw",
-            marginRight: "1vw",
-          }}
+          classes={["InitialSetting-all-pages__prev"]}
         />
         <Button
           text="완료"
           onClick={onSubmitClick}
-          styleOption={{
-            display: "inline",
-            marginLeft: "1vw",
-            marginRight: "1vw",
-          }}
+          classes={["InitialSetting-all-pages__next", "active"]}
         />
       </form>
     </div>

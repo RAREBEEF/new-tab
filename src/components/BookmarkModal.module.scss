@@ -11,6 +11,7 @@
   max-width: 400px;
   text-align: center;
   box-shadow: 1px 1px 8px black;
+
   h2 {
     color: white;
     text-align: start;
@@ -25,6 +26,7 @@
       bottom: 20px;
     }
   }
+
   .input--text {
     display: block;
     margin: auto;
@@ -36,18 +38,63 @@
     padding: {
       left: 5px;
     }
+
     &.bookmark-title {
       margin: {
         bottom: 10px;
       }
     }
   }
+
+  &.jawsbar {
+    h2 {
+      background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);
+    }
+  }
+
+  &.purple {
+    h2 {
+      background: linear-gradient(
+        25deg,
+        #2d00f7,
+        #8900f2,
+        #bc00dd,
+        #b100e8,
+        #db00b6,
+        #f20089
+      );
+    }
+  }
+
+  &.pastel {
+    h2 {
+      background: linear-gradient(
+        25deg,
+        #ffadad,
+        #ffd6a5,
+        #fdffb6,
+        #caffbf,
+        #9bf6ff,
+        #a0c4ff,
+        #bdb2ff,
+        #ffc6ff,
+        #fffffc
+      );
+    }
+  }
+
   &.white {
     background-color: rgba(0, 0, 0, 0.4);
     border-color: black;
     box-shadow: 1px 1px 8px gray;
     h2 {
       color: black;
+    }
+  }
+
+  &.black {
+    h2 {
+      background: black;
     }
   }
 }

@@ -52,7 +52,7 @@ const SettingEngine: React.FC<SettingEngineProps> = ({ setPage }) => {
         <div
           className={classNames(
             styles["logo-wrapper"],
-            userSetting.theme === "white" && styles.white
+            styles[userSetting.theme]
           )}
         >
           <img
@@ -89,27 +89,24 @@ const SettingEngine: React.FC<SettingEngineProps> = ({ setPage }) => {
         <Button
           text="이전"
           onClick={onPrevClick}
-          styleOption={{
-            display: "inline",
-            marginLeft: "1vw",
-            marginRight: "1vw",
-          }}
+          classes={["InitialSetting-all-pages__prev"]}
         />
         <Button
           text="다음"
           onClick={onNextClick}
-          styleOption={{
-            display: "inline",
-            marginLeft: "1vw",
-            marginRight: "1vw",
-            cursor: userSetting.engine !== "" ? "pointer" : "default",
-            backgroundColor:
-              userSetting.engine !== ""
-                ? userSetting.theme === "white"
-                  ? "black"
-                  : "white"
-                : "#bebebe",
-          }}
+          classes={[
+            "InitialSetting-all-pages__next",
+            userSetting.engine !== "" && "active",
+          ]}
+          // styleOption={{
+          //   cursor: userSetting.engine !== "" ? "pointer" : "default",
+          //   backgroundColor:
+          //     userSetting.engine !== ""
+          //       ? userSetting.theme === "white"
+          //         ? "black"
+          //         : "white"
+          //       : "#bebebe",
+          // }}
         />
       </form>
     </div>
