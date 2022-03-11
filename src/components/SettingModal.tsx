@@ -55,7 +55,7 @@ const SettingModal: React.FC<SettingModalProps> = ({
   }, [setSettingModalActive]);
 
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, styles[userSetting.theme])}>
       <div className={styles.wrapper}>
         <ul className={styles["nav"]}>
           <li

@@ -24,12 +24,28 @@
     border-radius: 5px 5px 0 0;
     &.active {
       background-color: rgba(255, 255, 255, 0.3);
+      background-color: whitesmoke;
+      color: black;
+      border-radius: 5px 5px 0 0;
     }
     &:hover {
       background-color: rgba(255, 255, 255, 0.3);
       border-radius: 5px;
+      color: white;
       &.active {
         border-radius: 5px 5px 0 0;
+      }
+    }
+  }
+  &.pastel {
+    .item {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      &.active {
+        border-radius: 5px 5px 0 0;
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.3);
       }
     }
   }

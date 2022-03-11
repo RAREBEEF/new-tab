@@ -27,7 +27,7 @@
   text-align: center;
   overflow-x: auto;
   overflow-y: visible;
-  transition: filter .5s;
+  transition: filter 0.5s;
   .bookmark {
     @keyframes bookmarksFadein {
       0% {
@@ -110,6 +110,9 @@
         border-color: rgb(80, 80, 80);
       }
     }
+  }
+  &.pastel {
+    background-color: rgba(0, 0, 0, 0.3);
   }
   &.black {
     background-color: rgba(255, 255, 255, 0.8);

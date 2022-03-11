@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { useCallback, useState } from "react";
-import { SettingModalProps } from "../types";
+import { useCallback } from "react";
+import { useSelector } from "react-redux";
+import { SettingModalProps, userSettingType } from "../types";
 import styles from "./Nav.module.scss";
 import SettingModal from "./SettingModal";
 
@@ -8,12 +9,14 @@ const Nav: React.FC<SettingModalProps> = ({
   setSettingModalActive,
   settingModalActive,
 }) => {
+  const userSetting = useSelector((state: userSettingType) => state);
+
   const onSettingClick = useCallback(() => {
     setSettingModalActive(!settingModalActive);
   }, [settingModalActive, setSettingModalActive]);
 
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, styles[userSetting.theme])}>
       <ul>
         <li
           onClick={onSettingClick}

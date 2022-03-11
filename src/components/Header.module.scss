@@ -11,7 +11,7 @@
 }
 
 .container {
-  transition: filter .5s;
+  transition: filter 0.5s;
   margin: {
     bottom: 5vh;
   }
@@ -46,6 +46,7 @@
       font-size: 25px;
     }
   }
+
   &.blur {
     filter: blur(3px);
     pointer-events: none;

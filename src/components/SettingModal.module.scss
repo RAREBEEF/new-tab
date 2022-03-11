@@ -8,6 +8,7 @@
   right: 0;
   border-radius: 5px 0 5px 5px;
   overflow: hidden;
+  text-shadow: none;
   // .header {
   //   padding: {
   //     top: 10px;
@@ -36,7 +37,7 @@
         right: 15px;
       }
       cursor: pointer;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid whitesmoke;
       color: whitesmoke;
       font-weight: 900;
       text-align: center;
@@ -45,7 +46,7 @@
         background-color: rgba(255, 255, 255, 0.5);
       }
       &.active {
-        background-color: white;
+        background-color: whitesmoke;
         // background-color: rgba(255, 255, 255, 0.8);
         color: black;
       }
@@ -56,7 +57,7 @@
   }
   .body {
     // height: 100%;
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
     display: flex;
     flex-grow: 1;
@@ -142,6 +143,21 @@
     .btn-wrapper {
       width: 100%;
       text-align: end;
+    }
+  }
+
+  &.pastel {
+    .nav {
+      background: rgba(0, 0, 0, 0.3);
+      .nav__item {
+        &.active {
+          background: rgba(0, 0, 0, 0.275);
+          color: white;
+        }
+      }
+    }
+    .body {
+      background: rgba(0, 0, 0, 0.5);
     }
   }
 }

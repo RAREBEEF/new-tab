@@ -14,7 +14,7 @@
   cursor: pointer;
   border-radius: 5px;
   border: none;
-  background-color: white;
+  background-color: whitesmoke;
   outline: none;
   display: block;
 
@@ -28,8 +28,14 @@
     border-radius: 0 5px 5px 0;
     background-color: rgba(255, 255, 255, 0.3) !important;
     height: 35px;
-    &.jawsbar {
+    &.jawsbar,
+    &.purple {
       color: white !important;
+    }
+    &.pastel {
+      color: white;
+      border-left: 1px solid white;
+      background-color: rgba(0, 0, 0, 0.3) !important;
     }
   }
 
