@@ -29,10 +29,11 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
 
   const onSubmitClick = useCallback(
     (e) => {
-      console.log(bookmark);
       e.preventDefault();
-      dispatch(addBookmark(bookmark));
-      setBookmarkModalActive(false);
+      if (bookmark.title.length >= 1 && bookmark.url.length >= 1) {
+        dispatch(addBookmark(bookmark));
+        setBookmarkModalActive(false);
+      }
     },
     [setBookmarkModalActive, bookmark, dispatch]
   );
@@ -59,6 +60,7 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
           value={bookmark.title}
           onChange={onTitleChange}
           maxLength={10}
+          minLength={1}
         />
         <input
           className={classNames(styles["input--text"], styles["bookmark-url"])}
@@ -66,6 +68,7 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
           placeholder="URL"
           value={bookmark.url}
           onChange={onUrlChange}
+          minLength={1}
         />
         <Button
           onClick={onSubmitClick}
