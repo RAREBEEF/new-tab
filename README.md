@@ -15,7 +15,6 @@
   ├── index.scss
   ├── types.ts
   ├── global.d.ts
-  ├── logo.svg
   ├── 📂components
   │	├── App.tsx
   │	├── App.module.scss
