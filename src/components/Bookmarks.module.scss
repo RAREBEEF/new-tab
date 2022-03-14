@@ -71,14 +71,21 @@
     }
 
     .anchor {
+      width: 100px;
+      height: 100px;
       color: inherit;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      overflow: hidden;
       .icon {
-        font-size: 80px;
+        font-size: 60px;
+        margin: auto;
       }
       .title {
-        margin: {
-          top: -5px;
-        }
+        margin: auto;
+        padding-bottom: 15px;
       }
     }
 
