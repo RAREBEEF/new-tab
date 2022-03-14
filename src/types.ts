@@ -58,7 +58,6 @@ export interface SettingThemeProps {
 
 export interface bookmarksProps {
   setBookmarkModalActive: Function;
-  isBlur: boolean;
 }
 
 export interface bookmarkModalProps {
@@ -70,14 +69,11 @@ export interface SettingModalProps {
   settingModalActive: boolean;
 }
 
-export interface HeaderModalProps {
-  isBlur: boolean;
-}
+export interface HeaderModalProps {}
 
-export interface SearchProps {
-  isBlur: boolean;
-}
+export interface SearchProps {}
 
-// export interface ClockModalProps {
-//   time: Array<string | number>;
-// }
+export interface WidgetProps {
+  isBlur: boolean;
+  setBookmarkModalActive: Function;
+}

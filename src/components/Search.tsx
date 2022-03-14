@@ -5,7 +5,7 @@ import { SearchProps, userSettingType } from "../types";
 import Button from "./Button";
 import styles from "./Search.module.scss";
 
-const Search: React.FC<SearchProps> = ({ isBlur }) => {
+const Search: React.FC<SearchProps> = () => {
   const [text, setText] = useState("");
   const [queryUrl, setQueryUrl] = useState("");
   const userSetting = useSelector((state: userSettingType) => state);
@@ -39,13 +39,7 @@ const Search: React.FC<SearchProps> = ({ isBlur }) => {
   );
 
   return (
-    <div
-      className={classNames(
-        styles.container,
-        styles[userSetting.theme],
-        isBlur && styles.blur
-      )}
-    >
+    <div className={classNames(styles.container, styles[userSetting.theme])}>
       <form>
         <input
           type="text"

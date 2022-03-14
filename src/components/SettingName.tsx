@@ -56,6 +56,7 @@ const SettingName: React.FC<SettingNameProps> = ({ setPage }) => {
           onClick={onNextClick}
           classes={[
             "InitialSetting-all-pages__next",
+            "name",
             userSetting.name.length >= 2 && "active",
           ]}
           // styleOption={{

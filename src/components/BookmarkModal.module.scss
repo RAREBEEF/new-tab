@@ -4,97 +4,122 @@
   cursor: default;
   position: absolute;
   margin: auto;
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 2px solid whitesmoke;
+  // background-color: rgba(255, 255, 255, 0.4);
+  // border: 2px solid whitesmoke;
   border-radius: 5px;
   width: 80vw;
   max-width: 400px;
   text-align: center;
   box-shadow: 1px 1px 8px black;
+  overflow: hidden;
 
-  h2 {
-    color: white;
-    text-align: start;
-    border-radius: 5px 5px 0 0;
-    font-weight: 700;
+  .content {
     padding: {
-      top: 5px;
-      left: 5px;
-      bottom: 5px;
+      top: 15px;
+      left: 10px;
+      right: 10px;
     }
-    margin: {
-      bottom: 20px;
-    }
-  }
+    // background-color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.4);
 
-  .input--text {
-    display: block;
-    margin: auto;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    height: 23px;
-    width: 90%;
-    padding: {
-      left: 5px;
+    h2 {
+      padding: {
+        bottom: 15px;
+      }
+      font-size: 20px;
+      width: 90%;
+      margin: auto;
+      text-align: start;
+      border-radius: 5px 5px 0 0;
+      font-weight: 900;
+      color: whitesmoke;
     }
+    .input--text {
+      display: block;
+      margin: auto;
+      outline: none;
+      border: none;
+      // border: 1px solid black;
+      border-radius: 5px;
+      height: 23px;
+      width: 90%;
+      padding: {
+        left: 5px;
+      }
 
-    &.bookmark-title {
-      margin: {
-        bottom: 10px;
+      &.bookmark-title {
+        margin: {
+          bottom: 10px;
+        }
       }
     }
   }
 
   &.jawsbar {
     h2 {
-      background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);
+      // background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);
+      // background-color: rgba(0, 0, 0, 0.3);
+    }
+    .content {
+      // background-color: rgba(0, 0, 0, 0.4);
     }
   }
 
   &.purple {
     h2 {
-      background: linear-gradient(
-        25deg,
-        #2d00f7,
-        #8900f2,
-        #bc00dd,
-        #b100e8,
-        #db00b6,
-        #f20089
-      );
+      // background: linear-gradient(
+      //   25deg,
+      //   #2d00f7,
+      //   #8900f2,
+      //   #bc00dd,
+      //   #b100e8,
+      //   #db00b6,
+      //   #f20089
+      // );
+      // background-color: rgba(255, 255, 255, 0.3);
     }
   }
 
   &.pastel {
     h2 {
-      background: linear-gradient(
-        25deg,
-        #ffadad,
-        #ffd6a5,
-        #fdffb6,
-        #caffbf,
-        #9bf6ff,
-        #a0c4ff,
-        #bdb2ff,
-        #ffc6ff,
-        #fffffc
-      );
+      text-shadow: none;
+      // background: linear-gradient(
+      //   25deg,
+      //   #ffadad,
+      //   #ffd6a5,
+      //   #fdffb6,
+      //   #caffbf,
+      //   #9bf6ff,
+      //   #a0c4ff,
+      //   #bdb2ff,
+      //   #ffc6ff,
+      //   #fffffc
+      // );
+      // background-color: rgba(0, 0, 0, 0.5);
+    }
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
     }
   }
 
   &.white {
-    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
     border-color: black;
     box-shadow: 1px 1px 8px gray;
-    h2 {
-      color: black;
-    }
   }
 
   &.black {
+    .content {
+      background-color: rgba(255, 255, 255, 0.9);
+      .input--text {
+        border: 1px solid black;
+      }
+    }
     h2 {
-      background: black;
+      color: black;
     }
   }
 }

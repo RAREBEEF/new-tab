@@ -14,7 +14,6 @@
   @include fadein(2s, 0.4s);
   opacity: 0;
   position: relative;
-  transition: filter 0.5s;
   .input--text {
     padding: {
       top: 5px;
@@ -33,11 +32,6 @@
     width: 35vw;
     min-width: 200px;
     height: 35px;
-  }
-
-  &.blur {
-    filter: blur(3px);
-    pointer-events: none;
   }
 
   &.white,

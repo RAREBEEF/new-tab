@@ -12,7 +12,7 @@
 
 .query {
   padding: {
-    top: 5vh;
+    top: 8vh;
     left: 10vw;
     right: 10vw;
   }
@@ -59,26 +59,22 @@
       &.theme--purple {
         background: linear-gradient(
           25deg,
-          #2d00f7,
-          #8900f2,
-          #bc00dd,
-          #b100e8,
-          #db00b6,
-          #f20089
+          #f72585,
+          #b5179e,
+          #7209b7,
+          #4361ee,
+          #4895ef,
+          #4cc9f0
         );
       }
       &.theme--pastel {
         background: linear-gradient(
           25deg,
-          #ffadad,
-          #ffd6a5,
-          #fdffb6,
-          #caffbf,
-          #9bf6ff,
-          #a0c4ff,
-          #bdb2ff,
-          #ffc6ff,
-          #fffffc
+          #cdb4db,
+          #ffc8dd,
+          #ffafcc,
+          #bde0fe,
+          #a2d2ff
         );
       }
       &.theme--black {

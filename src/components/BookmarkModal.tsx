@@ -47,8 +47,8 @@ const BookmarkModal: React.FC<bookmarkModalProps> = ({
 
   return (
     <div className={classNames(styles.container, styles[userSetting.theme])}>
-      <h2>Add bookmark</h2>
-      <form>
+      <form className={styles.content}>
+        <h2>Add bookmark</h2>
         <input
           className={classNames(
             styles["input--text"],

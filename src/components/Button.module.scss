@@ -6,7 +6,7 @@
     left: 10px;
   }
   margin: {
-    top: 8vh;
+    // top: 8vh;
     right: auto;
     left: auto;
   }
@@ -19,7 +19,7 @@
   display: block;
 
   &:hover {
-    filter: invert(0.3);
+    filter: invert(0.1);
   }
 
   &.Search {
@@ -32,21 +32,33 @@
     &.purple {
       color: white !important;
     }
-    &.pastel {
+    &.pastel,
+    &.white {
       color: white;
-      border-left: 1px solid white;
       background-color: rgba(0, 0, 0, 0.3) !important;
+    }
+    &.black {
+      background-color: rgba(255, 255, 255, 0.8) !important;
+      border-color: black;
     }
   }
 
   &.BookmarkModal__submit {
     margin: 15px 15px 15px auto;
     display: inline;
+    // border: 1px solid black;
+    &.black {
+      border: 1px solid black;
+    }
   }
 
   &.BookmarkModal__cancel {
     margin: auto;
     display: inline;
+    // border: 1px solid black;
+    &.black {
+      border: 1px solid black;
+    }
   }
 
   &.Bookmarks__delete {
@@ -58,23 +70,42 @@
 
   &.InitialSetting-all-pages__prev {
     margin: {
+      top: 20px;
       left: 1vw;
       right: 1vw;
+      bottom: 30px;
     }
     height: 30px;
     display: inline;
+    &.white {
+      background-color: black;
+      color: white;
+    }
+    &:hover {
+      filter: invert(0.3);
+    }
   }
 
   &.InitialSetting-all-pages__next {
     margin: {
+      top: 20px;
       left: 1vw;
       right: 1vw;
+      bottom: 30px;
     }
     filter: invert(0);
     height: 30px;
     display: inline;
     cursor: default;
     background-color: #bebebe;
+
+    &.name {
+      margin: {
+        left: auto;
+        right: auto;
+      }
+      display: block;
+    }
 
     &.active {
       cursor: pointer;
@@ -83,12 +114,19 @@
         filter: invert(0.3);
       }
     }
+    &.white {
+      background-color: black;
+      color: white;
+    }
   }
   &.SettingModal {
     display: inline;
     margin: auto;
-    border: 1px solid black;
+    // border: 1px solid black;
     color: black;
     margin-right: 20px;
+    &.black {
+      border: 1px solid black;
+    }
   }
 }

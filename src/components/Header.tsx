@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { HeaderModalProps, userSettingType } from "../types";
 import styles from "./Header.module.scss";
 
-const Header: React.FC<HeaderModalProps> = ({ isBlur }) => {
+const Header: React.FC<HeaderModalProps> = () => {
   const userName = useSelector((state: userSettingType) => state.name);
   const [time, setTime] = useState(["00", "00", "00", 2022, "00", "00", ""]);
   const day: any = time[6];
@@ -28,7 +28,7 @@ const Header: React.FC<HeaderModalProps> = ({ isBlur }) => {
     };
   }, []);
   return (
-    <div className={classNames(styles.container, isBlur && styles.blur)}>
+    <div className={classNames(styles.container)}>
       <h1 className={styles.header}>
         Good{" "}
         {time[0] >= 17 && time[0] < 21

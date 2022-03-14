@@ -6,10 +6,7 @@ import { bookmarksProps, userSettingType } from "../types";
 import styles from "./Bookmarks.module.scss";
 import Button from "./Button";
 
-const Bookmarks: React.FC<bookmarksProps> = ({
-  setBookmarkModalActive,
-  isBlur,
-}) => {
+const Bookmarks: React.FC<bookmarksProps> = ({ setBookmarkModalActive }) => {
   const dispatch = useDispatch();
   const userSetting = useSelector((state: userSettingType) => state);
 
@@ -25,13 +22,7 @@ const Bookmarks: React.FC<bookmarksProps> = ({
   );
 
   return (
-    <ul
-      className={classNames(
-        styles.container,
-        styles[userSetting.theme],
-        isBlur && styles.blur
-      )}
-    >
+    <ul className={classNames(styles.container, styles[userSetting.theme])}>
       {userSetting.bookmarks.map((bookmark: any, i) => {
         console.log(bookmark);
         return (

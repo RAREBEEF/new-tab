@@ -1,6 +1,6 @@
 .App {
-  height: 100vh;
-  min-height: 600px;
+  // height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   min-width: 200px;
   &.jawsbar {
@@ -11,12 +11,12 @@
     color: rgb(233, 233, 233);
     background: linear-gradient(
       25deg,
-      #2d00f7,
-      #8900f2,
-      #bc00dd,
-      #b100e8,
-      #db00b6,
-      #f20089
+      #f72585,
+      #b5179e,
+      #7209b7,
+      #4361ee,
+      #4895ef,
+      #4cc9f0
     );
   }
   &.pastel {
@@ -24,15 +24,11 @@
     text-shadow: 1px 1px 1px gray;
     background: linear-gradient(
       25deg,
-      #ffadad,
-      #ffd6a5,
-      #fdffb6,
-      #caffbf,
-      #9bf6ff,
-      #a0c4ff,
-      #bdb2ff,
-      #ffc6ff,
-      #fffffc
+      #cdb4db,
+      #ffc8dd,
+      #ffafcc,
+      #bde0fe,
+      #a2d2ff
     );
   }
   &.black {
