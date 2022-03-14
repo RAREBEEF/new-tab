@@ -1,4 +1,5 @@
 .container {
+  font-family: "Nanum Gothic", sans-serif;
   z-index: -1;
   width: 80vw;
   max-width: 500px;
@@ -56,6 +57,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        .input--text {
+          outline: none;
+          border-radius: 5px;
+          width: 80%;
+          height: 25px;
+        }
         .logo-wrapper {
           width: 100%;
           display: flex;

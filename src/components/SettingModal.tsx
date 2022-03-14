@@ -93,6 +93,7 @@ const SettingModal: React.FC<SettingModalProps> = ({
           {page === "name" ? (
             <div className={styles["content"]}>
               <input
+              className={styles["input--text"]}
                 value={name}
                 type="text"
                 onChange={onNameChange}
