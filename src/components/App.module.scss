@@ -1,8 +1,7 @@
 .App {
-  // height: 100vh;
-  min-height: 100vh;
   width: 100vw;
   min-width: 200px;
+  min-height: 100vh;
   &.jawsbar {
     color: white;
     background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);

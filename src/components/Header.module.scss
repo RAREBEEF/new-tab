@@ -14,33 +14,36 @@
   margin: {
     bottom: 5vh;
   }
+
   .header {
-    @include fadein(2s, 1s);
-    opacity: 0;
     padding: {
       left: 10px;
       right: 10px;
-      // top: 30px;
     }
+    @include fadein(2s, 1s);
+    opacity: 0;
     line-height: 50px;
     font-family: "Nanum Gothic", sans-serif;
     font-size: 40px;
     font-weight: 700;
     text-align: center;
   }
+
   .clock {
-    font-family: "Azeret Mono", monospace;
-    @include fadein(2s, 1.2s);
-    opacity: 0;
     margin: {
       top: 3vh;
     }
+    @include fadein(2s, 1.2s);
+    opacity: 0;
+    font-family: "Azeret Mono", monospace;
     text-align: center;
+
     .date {
       margin: {
         bottom: 5px;
       }
     }
+
     .time {
       font-size: 25px;
     }

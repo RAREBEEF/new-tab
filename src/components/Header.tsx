@@ -6,8 +6,8 @@ import styles from "./Header.module.scss";
 
 const Header: React.FC<HeaderModalProps> = () => {
   const userName = useSelector((state: userSettingType) => state.name);
-  const [time, setTime] = useState(["00", "00", "00", 2022, "00", "00", ""]);
-  const day: any = time[6];
+  const [time, setTime] = useState(["00", "00", "00", 2022, "00", "00"]);
+  const [day, setDay] = useState(0);
 
   useEffect(() => {
     const timeUpdate = setInterval(() => {
@@ -19,14 +19,15 @@ const Header: React.FC<HeaderModalProps> = () => {
         date.getFullYear(),
         date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1,
         date.getDate() < 10 ? `0${date.getDate()}` : date.getDate(),
-        date.getDay(),
       ]);
+      setDay(date.getDay());
     }, 1000);
 
     return () => {
       clearInterval(timeUpdate);
     };
   }, []);
+  
   return (
     <div className={classNames(styles.container)}>
       <h1 className={styles.header}>

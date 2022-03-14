@@ -31,12 +31,14 @@
     font-size: 30px;
   }
 
-  form {
+  .query__content {
     text-align: center;
+
     .logo-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+
       .search-engine-logo {
         margin: {
           bottom: 10px;
@@ -57,6 +59,7 @@
         }
       }
     }
+
     .white {
       .search-engine-logo {
         &.selected {

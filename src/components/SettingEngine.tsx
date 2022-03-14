@@ -35,7 +35,6 @@ const SettingEngine: React.FC<SettingEngineProps> = ({ setPage }) => {
     [userSetting, setPage]
   );
 
-  // TODO: 로컬 스토리지에 userSetting 업로드
   const onLogoClick = useCallback(
     (e) => {
       setSearchEngine(e.target.id);
@@ -48,7 +47,7 @@ const SettingEngine: React.FC<SettingEngineProps> = ({ setPage }) => {
       <h2 className={styles["query__title"]}>
         사용하실 검색 엔진을 골라주세요.
       </h2>
-      <form>
+      <div className={styles["query__content"]}>
         <div
           className={classNames(
             styles["logo-wrapper"],
@@ -98,17 +97,8 @@ const SettingEngine: React.FC<SettingEngineProps> = ({ setPage }) => {
             "InitialSetting-all-pages__next",
             userSetting.engine !== "" && "active",
           ]}
-          // styleOption={{
-          //   cursor: userSetting.engine !== "" ? "pointer" : "default",
-          //   backgroundColor:
-          //     userSetting.engine !== ""
-          //       ? userSetting.theme === "white"
-          //         ? "black"
-          //         : "white"
-          //       : "#bebebe",
-          // }}
         />
-      </form>
+      </div>
     </div>
   );
 };

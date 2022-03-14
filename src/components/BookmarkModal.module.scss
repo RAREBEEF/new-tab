@@ -1,17 +1,15 @@
 .container {
-  font-family: "Nanum Gothic", sans-serif;
-  color: black;
-  cursor: default;
   position: absolute;
-  margin: auto;
-  // background-color: rgba(255, 255, 255, 0.4);
-  // border: 2px solid whitesmoke;
-  border-radius: 5px;
   width: 80vw;
   max-width: 400px;
-  text-align: center;
-  box-shadow: 1px 1px 8px black;
+  margin: auto;
   overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  cursor: default;
+  color: black;
+  font-family: "Nanum Gothic", sans-serif;
+  box-shadow: 1px 1px 8px black;
 
   .content {
     padding: {
@@ -19,33 +17,32 @@
       left: 10px;
       right: 10px;
     }
-    // background-color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.4);
 
     h2 {
       padding: {
         bottom: 15px;
       }
-      font-size: 20px;
       width: 90%;
       margin: auto;
       text-align: start;
       border-radius: 5px 5px 0 0;
+      font-size: 20px;
       font-weight: 900;
       color: whitesmoke;
     }
+
     .input--text {
-      display: block;
-      margin: auto;
-      outline: none;
-      border: none;
-      // border: 1px solid black;
-      border-radius: 5px;
-      height: 23px;
-      width: 90%;
       padding: {
         left: 5px;
       }
+      display: block;
+      margin: auto;
+      width: 90%;
+      height: 23px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
 
       &.bookmark-title {
         margin: {
@@ -55,47 +52,9 @@
     }
   }
 
-  &.jawsbar {
-    h2 {
-      // background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);
-      // background-color: rgba(0, 0, 0, 0.3);
-    }
-    .content {
-      // background-color: rgba(0, 0, 0, 0.4);
-    }
-  }
-
-  &.purple {
-    h2 {
-      // background: linear-gradient(
-      //   25deg,
-      //   #2d00f7,
-      //   #8900f2,
-      //   #bc00dd,
-      //   #b100e8,
-      //   #db00b6,
-      //   #f20089
-      // );
-      // background-color: rgba(255, 255, 255, 0.3);
-    }
-  }
-
   &.pastel {
     h2 {
       text-shadow: none;
-      // background: linear-gradient(
-      //   25deg,
-      //   #ffadad,
-      //   #ffd6a5,
-      //   #fdffb6,
-      //   #caffbf,
-      //   #9bf6ff,
-      //   #a0c4ff,
-      //   #bdb2ff,
-      //   #ffc6ff,
-      //   #fffffc
-      // );
-      // background-color: rgba(0, 0, 0, 0.5);
     }
     .content {
       background-color: rgba(0, 0, 0, 0.6);

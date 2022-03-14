@@ -10,7 +10,6 @@ const SettingName: React.FC<SettingNameProps> = ({ setPage }) => {
   const userSetting = useSelector((state: userSettingType) => state);
   const dispatch = useDispatch();
 
-  // setState
   const setUserName = useCallback(
     (name) => {
       dispatch(setUserNameAction(name));
@@ -59,15 +58,6 @@ const SettingName: React.FC<SettingNameProps> = ({ setPage }) => {
             "name",
             userSetting.name.length >= 2 && "active",
           ]}
-          // styleOption={{
-          //   cursor: userSetting.name.length >= 2 ? "pointer" : "default",
-          //   backgroundColor:
-          //     userSetting.name.length >= 2
-          //       ? userSetting.theme === "white"
-          //         ? "black"
-          //         : "white"
-          //       : "#bebebe",
-          // }}
         />
       </form>
     </div>

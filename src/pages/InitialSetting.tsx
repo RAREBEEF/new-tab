@@ -5,7 +5,6 @@ import SettingEngine from "../components/SettingEngine";
 import SettingTheme from "../components/SettingTheme";
 
 const InitialSetting = () => {
-  // 초기 설정 페이지
   const [page, setPage] = useState(1);
 
   return (

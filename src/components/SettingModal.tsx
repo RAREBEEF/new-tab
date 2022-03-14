@@ -11,7 +11,6 @@ import Button from "./Button";
 import styles from "./SettingModal.module.scss";
 
 const SettingModal: React.FC<SettingModalProps> = ({
-  settingModalActive,
   setSettingModalActive,
 }) => {
   const userSetting = useSelector((state: userSettingType) => state);

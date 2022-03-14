@@ -46,7 +46,7 @@ const SettingTheme: React.FC<SettingThemeProps> = ({ setPage }) => {
   return (
     <div className={classNames(styles.query)}>
       <h2 className={styles["query__title"]}>사용하실 테마를 골라주세요.</h2>
-      <form>
+      <div className={styles["query__content"]}>
         <div className={styles["theme-wrapper"]}>
           <div
             id="jawsbar"
@@ -104,7 +104,7 @@ const SettingTheme: React.FC<SettingThemeProps> = ({ setPage }) => {
           onClick={onSubmitClick}
           classes={["InitialSetting-all-pages__next", "active"]}
         />
-      </form>
+      </div>
     </div>
   );
 };

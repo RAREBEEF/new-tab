@@ -6,17 +6,15 @@
     left: 10px;
   }
   margin: {
-    // top: 8vh;
     right: auto;
     left: auto;
   }
-
+  display: block;
   cursor: pointer;
   border-radius: 5px;
   border: none;
   background-color: whitesmoke;
   outline: none;
-  display: block;
 
   &:hover {
     filter: invert(0.1);
@@ -28,15 +26,18 @@
     border-radius: 0 5px 5px 0;
     background-color: rgba(255, 255, 255, 0.3) !important;
     height: 35px;
+
     &.jawsbar,
     &.purple {
       color: white !important;
     }
+
     &.pastel,
     &.white {
       color: white;
       background-color: rgba(0, 0, 0, 0.3) !important;
     }
+
     &.black {
       background-color: rgba(255, 255, 255, 0.8) !important;
       border-color: black;
@@ -46,7 +47,7 @@
   &.BookmarkModal__submit {
     margin: 15px 15px 15px auto;
     display: inline;
-    // border: 1px solid black;
+
     &.black {
       border: 1px solid black;
     }
@@ -55,7 +56,7 @@
   &.BookmarkModal__cancel {
     margin: auto;
     display: inline;
-    // border: 1px solid black;
+
     &.black {
       border: 1px solid black;
     }
@@ -77,10 +78,12 @@
     }
     height: 30px;
     display: inline;
+
     &.white {
       background-color: black;
       color: white;
     }
+
     &:hover {
       filter: invert(0.3);
     }
@@ -110,21 +113,24 @@
     &.active {
       cursor: pointer;
       background-color: white;
+
       &:hover {
         filter: invert(0.3);
       }
     }
+
     &.white {
       background-color: black;
       color: white;
     }
   }
+
   &.SettingModal {
     display: inline;
     margin: auto;
-    // border: 1px solid black;
     color: black;
     margin-right: 20px;
+
     &.black {
       border: 1px solid black;
     }

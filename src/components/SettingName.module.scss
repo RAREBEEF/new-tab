@@ -16,9 +16,7 @@
     left: 10vw;
     right: 10vw;
   }
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
+
   @include fadein(2s, 0.2s);
   opacity: 0;
   flex-grow: 1;
@@ -36,6 +34,7 @@
 
   form {
     text-align: center;
+
     .input--text {
       margin: {
         bottom: 10px;
@@ -52,6 +51,7 @@
       border-radius: 5px;
       border: none;
       outline: none;
+
       &.white {
         border: 1px solid black !important;
       }

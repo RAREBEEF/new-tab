@@ -1,89 +1,99 @@
 .container {
-  font-family: "Nanum Gothic", sans-serif;
   z-index: -1;
+  position: absolute;
+  height: auto;
   width: 80vw;
   max-width: 500px;
   min-width: 200px;
-  height: auto;
-  position: absolute;
   right: 0;
   border-radius: 5px 0 5px 5px;
   overflow: hidden;
   text-shadow: none;
+  font-family: "Nanum Gothic", sans-serif;
 
   .wrapper {
     display: flex;
 
     .nav {
       .nav__item {
-        background-color: rgba(0, 0, 0, 0.3);
-        width: 130px;
         padding: {
           top: 15px;
           bottom: 15px;
           left: 15px;
           right: 15px;
         }
+        width: 130px;
         cursor: pointer;
         border-bottom: 1px solid whitesmoke;
         color: whitesmoke;
         font-weight: 900;
         text-align: center;
+        background-color: rgba(0, 0, 0, 0.3);
+
         &:hover {
-          background-color: lightgray;
           background-color: rgba(0, 0, 0, 0.1);
         }
+
         &.active {
-          background-color: whitesmoke;
           background-color: rgba(0, 0, 0, 0.5);
         }
+
         &:nth-child(3) {
           border: none;
         }
       }
     }
+
     .body {
-      background-color: rgba(0, 0, 0, 0.5);
-      color: black;
-      display: flex;
-      flex-grow: 1;
-      flex-direction: column;
       padding: {
         bottom: 10px;
       }
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: black;
+
       .content {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
         .input--text {
           outline: none;
           border-radius: 5px;
           width: 80%;
           height: 25px;
         }
+
         .logo-wrapper {
           width: 100%;
           display: flex;
+
           .search-engine-logo {
             cursor: pointer;
             margin: auto;
             width: 50px;
             height: 50px;
             border: 1px solid gray;
+            border-radius: 5px;
+
             &:nth-child(2) {
               border: none;
             }
-            border-radius: 5px;
+
             &.selected {
               box-shadow: 1px 1px 3px black;
             }
           }
         }
+
         .theme-wrapper {
           width: 100%;
           display: flex;
+
           .theme {
             cursor: pointer;
             margin: auto;
@@ -91,12 +101,15 @@
             height: 40px;
             border: 1px solid gray;
             border-radius: 5px;
+
             &.selected {
               box-shadow: 1px 1px 3px black;
             }
+
             &.theme--jawsbar {
               background: linear-gradient(25deg, #b7094c, #5c4d7d, #0091ad);
             }
+
             &.theme--purple {
               background: linear-gradient(
                 25deg,
@@ -108,6 +121,7 @@
                 #4cc9f0
               );
             }
+
             &.theme--pastel {
               background: linear-gradient(
                 25deg,
@@ -118,9 +132,11 @@
                 #a2d2ff
               );
             }
+
             &.theme--black {
               background: black;
             }
+
             &.theme--white {
               background: white;
             }
@@ -134,6 +150,7 @@
       }
     }
   }
+
   &.pastel {
     .nav {
       .nav__item {
@@ -164,6 +181,7 @@
       background-color: rgba(0, 0, 0, 0.7);
     }
   }
+  
   &.black {
     .nav {
       .nav__item {

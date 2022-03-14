@@ -44,7 +44,6 @@ export interface ButtonProps {
   classes?: any;
 }
 
-// Prop type
 export interface SettingNameProps {
   setPage: Function;
 }
